@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join TessWave Technologies. Apply online in about five minutes." />
+  <title>Careers · TessWave Technologies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="corner">
+    <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">🌙</button>
+  </div>
+  <div class="layout">
+    <aside class="hero">
+      <div class="hero-in">
+        <div class="me" id="me">
+          <div class="ph"><img src="./me.jpeg" alt="Abdulwahab Teslim" onerror="document.getElementById('me').classList.add('noimg')" /><span class="initials">AT</span></div>
+          <div><b>Abdulwahab Teslim</b><small>Developer of this site</small></div>
+        </div>
+        <span class="badge">Careers</span>
+        <h1>TessWave Technologies</h1>
+        <p class="lead">Welcome to TessWave Technologies. Kindly fill the form to submit your application.</p>
+        <ul class="facts">
+          <li><b>4</b><span>open roles</span></li>
+          <li><b>5</b><span>minutes to apply</span></li>
+          <li><b>4</b><span>simple steps</span></li>
+        </ul>
+        <ul class="perks">
+          <li>Your progress is saved automatically</li>
+          <li>Review everything before you submit</li>
+          <li>Get a reference number instantly</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="panel">
+      <section class="card" id="formCard">
+        <div class="meter" aria-live="polite">
+          <svg class="mring" viewBox="0 0 44 44" aria-hidden="true"><circle class="mbg" cx="22" cy="22" r="18" /><circle id="mFg" class="mfg" cx="22" cy="22" r="18" /></svg>
+          <b id="mPct">0%</b>
+          <div><strong id="mLabel">Application strength</strong><small id="mTip">Fill in your details to begin.</small></div>
+        </div>
+        <ol class="steps" aria-label="Progress">
+          <li class="dot active"><b>1</b><span>About</span></li>
+          <li class="dot"><b>2</b><span>Role</span></li>
+          <li class="dot"><b>3</b><span>Skills</span></li>
+          <li class="dot"><b>4</b><span>Finish</span></li>
+        </ol>
+        <div class="bar"><div id="barFill"></div></div>
+
+        <form id="applyForm" action="#" method="POST" novalidate>
+          <fieldset class="step">
+            <legend>About you</legend>
+            <div class="field" data-rule="full-name">
+              <label for="full-name">Full Name <span>*</span></label>
+              <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" autocomplete="name" />
+              <small class="error" role="alert"></small>
+            </div>
+            <div class="field" data-rule="email">
+              <label for="email">Email Address <span>*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+              <small class="error" role="alert"></small>
+            </div>
+            <div class="field" data-rule="tel">
+              <label for="tel">Phone Number <span>*</span></label>
+              <input type="tel" id="tel" name="phone-number" placeholder="+234 800 000 0000" autocomplete="tel" />
+              <small class="error" role="alert"></small>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" hidden>
+            <legend>The role</legend>
+            <div class="field" data-rule="position" role="radiogroup" aria-label="Position">
+              <label>Position Applying For <span>*</span></label>
+              <div class="roles">
+                <label class="role"><input type="radio" name="position" value="Frontend Developer" /><span><b>Frontend Developer</b><em>HTML, CSS, JavaScript</em></span></label>
+                <label class="role"><input type="radio" name="position" value="UI/UX Designer" /><span><b>UI/UX Designer</b><em>Research, Figma, prototypes</em></span></label>
+                <label class="role"><input type="radio" name="position" value="Backend Developer" /><span><b>Backend Developer</b><em>APIs, Python, databases</em></span></label>
+                <label class="role"><input type="radio" name="position" value="Support Intern" /><span><b>Support Intern</b><em>Help customers, learn fast</em></span></label>
+              </div>
+              <small class="error" role="alert"></small>
+            </div>
+            <div class="row">
+              <div class="field" data-rule="experience">
+                <label for="experience">Years of Experience <span>*</span></label>
+                <input type="number" id="experience" name="experience" placeholder="e.g. 2" min="0" max="50" />
+                <small class="error" role="alert"></small>
+              </div>
+              <div class="field" data-rule="startDate">
+                <label for="startDate">Available from <span>*</span></label>
+                <input type="date" id="startDate" name="start-date" />
+                <small class="error" role="alert"></small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="mode">Work style</label>
+                <select id="mode" name="work-mode"><option>Remote</option><option>Hybrid</option><option>On-site</option></select>
+              </div>
+              <div class="field" data-rule="salary">
+                <label for="salary">Expected salary (optional)</label>
+                <input type="number" id="salary" name="salary" placeholder="Monthly amount" min="0" />
+                <small class="error" role="alert"></small>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" hidden>
+            <legend>Skills and documents</legend>
+            <div class="field" data-rule="skills">
+              <label for="skillInput">Your skills <span>*</span></label>
+              <div class="chips-box">
+                <div id="chips" class="chips"></div>
+                <input type="text" id="skillInput" list="skillList" placeholder="Type a skill, press Enter" maxlength="30" autocomplete="off" />
+              </div>
+              <datalist id="skillList"><option>HTML</option><option>CSS</option><option>JavaScript</option><option>TypeScript</option><option>React</option><option>Python</option><option>Figma</option><option>Git</option><option>SQL</option><option>Customer support</option></datalist>
+              <input type="hidden" id="skillsValue" name="skills" />
+              <small class="error" role="alert"></small>
+            </div>
+            <div class="row">
+              <div class="field" data-rule="linkedin">
+                <label for="linkedin">LinkedIn (optional)</label>
+                <input type="text" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/you" inputmode="url" />
+                <small class="error" role="alert"></small>
+              </div>
+              <div class="field" data-rule="portfolio">
+                <label for="portfolio">GitHub or portfolio</label>
+                <input type="text" id="portfolio" name="portfolio" placeholder="https://github.com/you" inputmode="url" />
+                <small class="error" role="alert"></small>
+              </div>
+            </div>
+            <div class="field" data-rule="cv">
+              <label for="cv">Upload CV/Resume <span>*</span></label>
+              <div class="drop" id="drop">
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" />
+                <p><strong>Drop your file here</strong> or click to browse</p>
+                <small id="fileInfo">PDF, DOC or DOCX · max 5 MB</small>
+              </div>
+              <small class="error" role="alert"></small>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" hidden>
+            <legend>Almost done</legend>
+            <div class="field" data-rule="message">
+              <label for="message">Why should we hire you? <span>*</span></label>
+              <textarea id="message" name="message" rows="5" maxlength="600" placeholder="Tell us why you would be a great fit for this role..."></textarea>
+              <div class="meta"><small class="error" role="alert"></small><small id="counter">0 / 600</small></div>
+            </div>
+            <dl class="review" id="review"></dl>
+            <div class="field" data-rule="agreement">
+              <label class="inline"><input type="checkbox" id="agreement" name="agreement" /> I confirm the information above is correct.</label>
+              <small class="error" role="alert"></small>
+            </div>
+          </fieldset>
+
+          <div class="actions">
+            <button type="button" id="backBtn" class="btn ghost" hidden>← Back</button>
+            <button type="button" id="nextBtn" class="btn primary">Continue →</button>
+            <button type="submit" id="submitBtn" class="btn primary" hidden>Submit Application →</button>
+          </div>
+          <p class="draft">Your progress is saved on this device.</p>
+        </form>
+      </section>
+
+      <section class="card success" id="success" hidden>
+        <div class="tick">✓</div>
+        <h2>Application received</h2>
+        <p>Thank you, <strong id="sName"></strong>. We will contact you by email.</p>
+        <p>Reference: <code id="sRef"></code></p>
+        <div class="actions center">
+          <button class="btn ghost" id="copyBtn" type="button">Copy reference</button>
+          <button class="btn ghost" id="printBtn" type="button">Print / Save PDF</button>
+          <button class="btn primary" id="againBtn" type="button">New application</button>
+        </div>
+      </section>
+
+      <footer class="footer"><p>© 2026.</p><p>Developed by Abdulwahab Teslim</p></footer>
+    </main>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
